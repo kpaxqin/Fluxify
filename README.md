@@ -3,6 +3,7 @@ Fluxify: 构建Flux应用的轻量化工具库
 
 ##概述
 Fluxify是一个轻量化的（目前源码不足500行），协助构建[Flux][Flux]结构Web应用的工具库
+
 由于facebook的[Flux][Flux]库更偏向于理念展示，公布的实现中只有Dispatcher部分。实际构建中有大量的重复工作可以由统一的工具库代劳，这也是Fluxify出现的原因。
 
 Fluxify目前做了以下事情：
