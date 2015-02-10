@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>my chat</title>
+    <link rel="stylesheet" href="./css/chatapp.css"/>
+</head>
+<body>
+<section id="chat"></section>
+
+<script src="lib/sea.js"></script>
+<script src="lib/react.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+        seajs.use(["./js/index"], function(Index){
+            Index.init();
+        })
+    });
+
+</script>
+</body>
+</html>
