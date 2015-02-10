@@ -36,7 +36,9 @@ Fluxify.getActionTypes();// => Object {THREAD_CLICK: "THREAD_CLICK", CREATE_MESS
 
 ```
 其中`Fluxify.setActionTypes`支持多次调用，最终保存的将是merge后的结果
+
 为了简化配置，`Fluxify.setActionTypes`还提供了自动的KeyMirror功能
+
 如下
 ```js
 Fluxify.setActionTypes({FOO: null});
@@ -48,8 +50,11 @@ console.log(Fluxify.getActionTypes());
 ```
 
 ### 内置dispatcher
-由于在Flux中dispatcher是单例的action转发器，因此没有由用户构建实例的必要，直接内置了一个dispatcher实例并通过`Fluxify.dispatcher`访问。
+
+由于在Flux中dispatcher是单例的action转发器，因此没有由用户构建实例的必要，直接内置了一个dispatcher实例并通过`Fluxify.dispatcher`访问
+
 保留了`register, unregister, waitFor, dispatch`等函数接口，其中waitFor不仅支持回调ID数组，也支持Store对象数组（由createStore构建的Store），如下：
+
 ```js
 var FooStore = Fluxify.createStore("FooStore", {/*methods*/}, function(payload){});
 
@@ -61,6 +66,7 @@ dispatcher.waitFor([FooStore.dispatchToken]);//等效于 dispatcher.waitFor([Foo
 ```
 
 ###createStore工厂方法
+
 createStore对事件相关的代码进行了封装，同时规范了构造Store对象的过程。注意createStore构建出的Store是一个简单对象。
 
 createStore(name, methods, onDispatching)提供了三个参数:
@@ -77,7 +83,8 @@ createStore返回的Store对象具备如下函数与属性：
 * `offChange(listener)`  移除change事件监听器
 
 ###ReactMixins
-使用示例,
+
+使用示例
 ```js
 React.createClass({
     mixins: [Fluxify.ReactMixins],
