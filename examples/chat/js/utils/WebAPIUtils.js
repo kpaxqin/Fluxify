@@ -12,17 +12,22 @@ define(function(require){
             ServerActionCreator.receiveAll(messages);
         },
         addMessage: function(message, thread){
-            var rawMessages = JSON.parse(localStorage.getItem("messages"));
-            rawMessages.push({
-                id: message.id,
-                threadID: message.threadID,
-                threadName: thread.name,
-                authorName: message.authorName,
-                text: message.text,
-                timestamp: +message.date
-            });
+            var rawMessages = JSON.parse(localStorage.getItem("messages")),
+                newMessage = {
+                    id: message.id,
+                    threadID: message.threadID,
+                    threadName: thread.name,
+                    authorName: message.authorName,
+                    text: message.text,
+                    timestamp: +message.date
+                };
+            rawMessages.push(newMessage);
 
-            localStorage.setItem("messages", JSON.stringify(rawMessages))
+            //模拟服务器异步处理并返回结果
+            setTimeout(function(){
+                localStorage.setItem("messages", JSON.stringify(rawMessages));
+                ServerActionCreator.addMessage(newMessage);
+            }, 1000);
 
         }
     }

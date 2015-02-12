@@ -74,7 +74,11 @@ define(function(require){
             case ACTION_TYPE.CREATE_MESSAGE:
                 _messages[action.message.id] = action.message;
                 this.emitChange();
-
+                break;
+            case ACTION_TYPE.ADD_RAW_MESSAGE:
+                delete _messages[action.rawMessage.id].isSending;
+                this.emitChange();
+                break;
             default :
         }
     });

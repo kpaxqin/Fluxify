@@ -96,3 +96,12 @@
   margin: 20px 0 0;
   padding: 10px;
 }
+
+.message-sending {
+    float: left;
+    width: 1em;
+    height: 1em;
+    margin: 0 3px 0 0;
+    background: url(../images/loading.png) -49px -33px no-repeat;
+}
+

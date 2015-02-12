@@ -15,6 +15,15 @@ define(function(require){
                     rawMessages: msgs
                 }
             })
+        },
+        addMessage: function(message){
+
+            dispatcher.dispatch({
+                action: {
+                    actionType: ACTION_TYPE.ADD_RAW_MESSAGE,
+                    rawMessage: message
+                }
+            })
         }
     }
 });

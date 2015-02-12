@@ -5,6 +5,7 @@ define(function(){
     return {
         ACTION_TYPE: {
             RECEIVE_RAW_MESSAGE: null,
+            ADD_RAW_MESSAGE : null,
             THREAD_CLICK: null,
             CREATE_MESSAGE: null
         },

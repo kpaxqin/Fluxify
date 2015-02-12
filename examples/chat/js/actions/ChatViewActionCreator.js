@@ -25,6 +25,8 @@ define(function(require){
         createMessage: function(text){
             var message = MessageStore.getCreatedMessage(text);
 
+            message.isSending = true;
+
             dispatcher.dispatch({
                 action: {
                     actionType: ACTION_TYPE.CREATE_MESSAGE,
